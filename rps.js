@@ -5,6 +5,7 @@ let losses = 0;
 game();
 if (wins > losses) {alert("Congratulations! You win the game!")}
 else if (losses > wins) {alert("Sorry! You lost the game.")}
+else {alert("The game ended in a tie!")}
 
 function computerPlay()
 {return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];}
@@ -13,9 +14,7 @@ function playerPlay()
 {return prompt("Rock…Paper…Scissors…Shoot!").toLowerCase();}
 
 function playRound(playerselection, computerselection){
-    if (playerselection === "rock" && computerselection === "rock") {return "it's a tie!";}
-    else if (playerselection === "paper" && computerselection === "paper") {return "it's a tie!"}
-    else if (playerselection === "scissors" && computerselection === "scissors") {return "it's a tie!"}
+    if (playerselection === computerselection) {return "it's a tie!";}
     else if (playerselection === "paper" && computerselection === "rock") {
         wins = wins + 1;
         return "You win! Paper covers rock!";}
