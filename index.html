@@ -3,16 +3,162 @@
 <head>
   <title>Page Title</title>
   <meta charset="UTF-8"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    .scores {
+      font-family: 'VT323', monospace;
+      font-size: 25px;
+      height: 100px;
+      width: 300px;
+      display: flex;
+      align-content: flex-start;
+      justify-content: flex-end;
+      position: relative;
+      bottom: 45px;
+      left: 1100px;
+    }
+
+    .button {
+      background-color: black;
+      border: thick solid black;
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+      border-radius: 50px;
+      width: 225px;
+      height: 225px;
+      text-align: center;
+      margin: 50px;
+      padding: -10px;
+      position: relative;
+      bottom: 160px;
+    }
+
+    .button:hover {
+      transform: scale(1.2) perspective(1px);
+    }
+
+    #rock:hover {
+      box-shadow: 25px 25px pink;
+    }
+
+    #paper:hover {
+      box-shadow: 25px 25px blue;
+    }
+
+    #scissors:hover {
+      box-shadow: 25px 25px rgb(243, 233, 86);
+    }
+
+    .threebuttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 100px;
+      font-family: 'VT323', monospace;
+      margin: 0;
+      position: relative;
+      bottom: 100px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 50px;
+      font-family: 'VT323', monospace;
+      position: relative;
+      bottom: 100px;
+    }
+
+    div {
+      text-align: center;
+      padding: 25px;
+    }
+
+    #results {
+      text-align: center;
+      font-size: 50px;
+      font-family: 'VT323', monospace;
+      position: relative;
+      bottom: 180px;
+    }
+
+    #finalresults{
+      text-align: center;
+      font-size: 50px;
+      font-family: 'VT323', monospace;
+      position: relative;
+      top: 50px;
+    }
+
+    #rockimage {
+      height: 200px;
+      width: 200px;
+    }
+
+    #paperimage {
+      height: 210px;
+      width: 210px;
+    }
+
+    #scissorsimage {
+      height: 200px;
+      width: 200px;
+    }
+
+    #restartimage {
+      height: 75px;
+      width: 75px;
+    }
+
+    #restartButton {
+      background-color: black;
+      border: thick solid black;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      border-radius: 25px;
+      width: 100px;
+      height: 100px;
+    }
+
+    #restart {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      top: 125px;
+      opacity: 0;
+    }
+
+    #restartButton:hover{
+      box-shadow: 12px 12px lightgreen;
+    }
+  </style>
 </head>
 <body>
-  <h1>Choose Wisely!</h1>
-  <button id = "rock" type="button">Rock</button>
-  <button id = "paper" type="button">Paper</button>
-  <button id = "scissors" type="button">Scissors</button>
-  <div id = "results"></div>
-  <div id= "playerScore"></div>
-  <div id= "computerScore"></div>
-  <div id= "finalresults"></div>
-  <script src = "rps.js"></script>
+  <div class="scores">
+    <div id="playerScore"></div>
+    <div id="computerScore"></div>
+  </div>
+  <h1>Rock Paper Scissors</h1>
+  <h2>First to 5 wins!</h2>
+  <div class="threebuttons">
+    <button class="button" id="rock" type="button"><img id="rockimage" src="rock.png"></button>
+    <button class="button" id="paper" type="button"><img id="paperimage" src="paper.png"></button>
+    <button class="button" id="scissors" type="button"><img id="scissorsimage" src="scissors.png"></button>
+  </div>
+  <div id="results"></div>
+  <div id="finalresults"></div>
+  <div id="restart">
+    <button id="restartButton" type="button"><img id="restartimage" src="restart.png"></button>
+  </div>
+  <script src="rps.js"></script>
 </body>
 </html>
